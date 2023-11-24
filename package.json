@@ -1,0 +1,20 @@
+{
+  "name": "host-locker",
+  "version": "0.0.1",
+  "description": "Indicating control and security for specific hosts.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beeplaced/host-locker.git"
+  },
+  "keywords": ["node"],
+  "author": "beeplaced",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beeplaced/host-locker/issues"
+  },
+  "homepage": "https://github.com/beeplaced/host-locker#readme"
+}
