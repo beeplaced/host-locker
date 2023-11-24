@@ -1,4 +1,3 @@
-
 class HostLocker {
 
     constructor(maxCallThreshold=5, secondsThreshold=5) {
@@ -18,7 +17,7 @@ class HostLocker {
 
             const isOlder = timeStampOlder(timestamp);
             if (isOlder) {
-                newHostCount(hostname);
+            this.newHostCount(hostname);
             } else {
                 this.hostCount[hostname].c++;
             }
@@ -46,4 +45,4 @@ newHostCount = (hostname) => {
 
 }
 
-module.exports = WorkerPool;
+module.exports = HostLocker;
