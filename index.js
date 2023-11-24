@@ -1,12 +1,18 @@
 class HostLocker {
 
-    constructor(maxCallThreshold=5, secondsThreshold=5) {
+    constructor(config) {
+        const { maxCallThreshold=5, secondsThreshold=5, allowedHosts=[] } = config
         this.hostCount = {};
         this.maxCallThreshold = maxCallThreshold;
         this.secondsThreshold = secondsThreshold;
+        this.allowedHosts = allowedHosts;
     }
 
     check = (hostname) => {
+        
+        if (!this.allowedHosts.includes(hostname)){
+            return false
+        }
         let run = true
 
         if (!this.hostCount[hostname]) {
