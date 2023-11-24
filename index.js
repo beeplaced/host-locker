@@ -15,7 +15,7 @@ class HostLocker {
             const mt = this.hostCount[hostname].d
             const timestamp = new Date(mt);
 
-            const isOlder = timeStampOlder(timestamp);
+            const isOlder = this.timeStampOlder(timestamp);
             if (isOlder) {
             this.newHostCount(hostname);
             } else {

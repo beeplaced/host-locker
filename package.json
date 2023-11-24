@@ -1,6 +1,6 @@
 {
   "name": "host-locker",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Indicating control and security for specific hosts.",
   "main": "index.js",
   "scripts": {
