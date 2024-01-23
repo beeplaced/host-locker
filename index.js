@@ -7,10 +7,10 @@ class HostLocker {
        * @param {Object} config - Configuration options.
        * @param {number} [config.maxCallThreshold=5] - Maximum allowed calls within the specified time window.
        * @param {number} [config.secondsThreshold=5] - Time window in seconds.
-       * @param {string[]} [config.allowedHosts=[]] - An array of allowed hosts.
+       * @param {string[]} [config.allowedOrigins=[]] - An array of allowed hosts.
        */
     constructor(config) {
-        const { maxCallThreshold = 5, secondsThreshold = 5, allowedHosts = [] } = config
+        const { maxCallThreshold = 5, secondsThreshold = 5, allowedOrigins = [] } = config
         /**
              * Object to store the request count for each host.
              * @type {Object.<string, { c: number, d: Date }>}
@@ -27,10 +27,10 @@ class HostLocker {
              */
         this.secondsThreshold = secondsThreshold
         /**
-             * An array of allowed hosts.
+             * An array of allowed origins.
              * @type {string[]}
              */
-        this.allowedHosts = allowedHosts
+        this.allowedOrigins = allowedOrigins
     }
 
     /**
@@ -39,7 +39,7 @@ class HostLocker {
        * @returns {boolean} Returns true if the request is allowed, false otherwise.
        */
     check(hostname) {
-        if (!this.allowedHosts.includes(hostname)) {
+        if (!this.allowedOrigins.includes(hostname)) {
             return false
         }
 

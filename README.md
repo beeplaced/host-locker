@@ -1,6 +1,6 @@
 # host-locker
 
-HostLocker is a Node.js middleware class designed for rate-limiting and controlling access based on the number of requests within a specified time window for specific hosts.
+HostLocker is a Node.js middleware class designed for rate-limiting and controlling access based on the number of requests within a specified time window from specific origins.
 
 ## Table of Contents
 <!-- no toc -->
@@ -11,7 +11,7 @@ HostLocker is a Node.js middleware class designed for rate-limiting and controll
 
 ## About
 
-The library checks if a given hostname is allowed to make a request based on the configured rate-limiting parameters.
+The library checks if a given origin is allowed to make a request based on the configured rate-limiting parameters.
 
 ## Installation and usage
 
@@ -29,7 +29,7 @@ const HostLocker = require('host-locker');
 const hostLimiter = new HostLocker({
   maxCallThreshold: 5, // Maximum allowed calls within the specified time window (default: 5)
   secondsThreshold: 5, // Time window in seconds (default: 5)
-  allowedHosts: ['example.com', 'api.example.com']  // Allowed hosts (default: [])
+  allowedOrigins: ['example.com', 'api.example.com']  // Allowed hosts (default: [])
 });
 
 // Check if a host is allowed to make a request
